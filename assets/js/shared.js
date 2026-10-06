@@ -1,15 +1,10 @@
+
 document.addEventListener('DOMContentLoaded',()=>{
- const toggle=document.querySelector('.rf-toggle'),nav=document.querySelector('.rf-nav');
- if(toggle&&nav){
-  toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});
-  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
- }
  const reveal=()=>document.querySelectorAll('.rf-reveal').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-45)el.classList.add('show')});
  reveal(); window.addEventListener('scroll',reveal,{passive:true});
- const form=document.querySelector('.rf-form'); if(form){form.addEventListener('submit',e=>{e.preventDefault();alert('Thank you! Rivika Foundation has received your message. We will contact you soon.');form.reset()})}
+ const form=document.querySelector('.rf-form'); if(form){form.addEventListener('submit',e=>{e.preventDefault();alert('Thank you! Diamond Shiksha Prachar Samiti has received your message. We will contact you soon.');form.reset()})}
  initAutoGalleries();
  removeLegacySmileChat();
- initWhatsAppFloat();
 });
 
 
@@ -45,18 +40,6 @@ function removeLegacySmileChat(){
  };
  remove();
  new MutationObserver(remove).observe(document.body,{childList:true,subtree:true});
-}
-
-function initWhatsAppFloat(){
- const existing=document.querySelector('.rf-wa-float');
- if(existing)return;
- const a=document.createElement('a');
- a.className='rf-wa-float';
- a.href='https://wa.me/918570937472?text=Hello%20Rivika%20Foundation';
- a.target='_blank'; a.rel='noopener noreferrer';
- a.setAttribute('aria-label','Chat with Rivika Foundation on WhatsApp');
- a.innerHTML='<span class="rf-wa-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path fill="currentColor" d="M19.11 17.1c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.64.14-.19.28-.73.9-.9 1.09-.16.19-.33.21-.61.07-.28-.14-1.17-.43-2.23-1.37-.82-.73-1.37-1.62-1.53-1.9-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.47-.64-.48l-.54-.01c-.19 0-.49.07-.75.35-.26.28-.98.95-.98 2.31 0 1.36 1 2.67 1.14 2.85.14.19 1.97 3.01 4.77 4.22.67.29 1.2.46 1.61.59.68.22 1.3.19 1.78.11.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33z"/><path fill="currentColor" d="M16.03 5.33A10.67 10.67 0 0 0 6.97 21.7L5.5 26.06l4.49-1.43a10.67 10.67 0 1 0 6.04-19.3zm0 19.47a8.77 8.77 0 0 1-4.47-1.22l-.32-.19-2.67.85.87-2.6-.21-.34A8.77 8.77 0 1 1 16.03 24.8z"/></svg></span><span class="rf-wa-text">Chat on WhatsApp</span>';
- document.body.appendChild(a);
 }
 
 
@@ -97,7 +80,7 @@ async function setupGallery(gallery){
  files.forEach((src,i)=>{
   const slide=document.createElement('div');slide.className='rf-gallery-slide';
   const img=document.createElement('img');
-  img.loading=i===0?'eager':'lazy'; img.decoding='async'; img.alt=`Rivika Foundation gallery image ${i+1}`;
+  img.loading=i===0?'eager':'lazy'; img.decoding='async'; img.alt=`Diamond Shiksha Prachar Samiti gallery image ${i+1}`;
   img.src=src.startsWith('http')?src:dir+src.replace(/^\//,'');
   img.addEventListener('click',()=>openLightbox(img.src));
   slide.appendChild(img);track.appendChild(slide);
@@ -168,3 +151,36 @@ document.addEventListener('DOMContentLoaded',function(){
     start();
   });
 });
+
+
+
+/* FINAL MOBILE NAVIGATION — single handler, works on touch + mouse */
+(function(){
+  function bindMobileNav(){
+    const toggle=document.querySelector('.rf-toggle');
+    const nav=document.querySelector('.rf-nav');
+    if(!toggle || !nav || toggle.dataset.rfMobileNav==='1') return;
+    toggle.dataset.rfMobileNav='1';
+    const setOpen=(open)=>{
+      nav.classList.toggle('open',open);
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+      toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+      toggle.textContent=open?'✕':'☰';
+    };
+    const handle=(e)=>{
+      if(window.innerWidth>1000) return;
+      e.preventDefault(); e.stopPropagation();
+      setOpen(!nav.classList.contains('open'));
+    };
+    toggle.addEventListener('click',handle,true);
+    toggle.addEventListener('pointerup',function(e){
+      if(e.pointerType==='touch') { e.preventDefault(); e.stopPropagation(); }
+    },true);
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));
+    window.addEventListener('resize',()=>{if(window.innerWidth>1000)setOpen(false);});
+    setOpen(false);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bindMobileNav);
+  else bindMobileNav();
+  window.addEventListener('load',bindMobileNav);
+})();

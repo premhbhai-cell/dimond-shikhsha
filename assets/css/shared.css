@@ -96,7 +96,7 @@ body > .chaty-widget,body > .chaty-widget-is, .chaty-widget, .chaty-widget-is, .
 /* Permanently disable the old auto-opening subscription popup on Home. */
 .elementor-84897.elementor-location-popup{display:none!important;visibility:hidden!important;pointer-events:none!important;}
 
-/* Rivika global polish */
+/* Diamond Shiksha Prachar Samiti global polish */
 .rf-logo-img{width:auto;height:78px;max-width:270px;object-fit:contain;display:block}.rf-brand{display:flex;align-items:center;gap:14px}.rf-sticky-contact{position:fixed;left:18px;right:18px;bottom:16px;z-index:99999;display:flex;justify-content:space-between;align-items:center;pointer-events:none}.rf-sticky-contact a{pointer-events:auto;text-decoration:none}.rf-sticky-wa,.rf-sticky-right a{width:58px;height:58px;border-radius:50%;display:flex!important;align-items:center;justify-content:center;font-weight:800;font-size:24px;box-shadow:0 10px 25px rgba(0,0,0,.18);transition:.25s}.rf-sticky-wa{background:#25d366;color:#fff}.rf-sticky-right{display:flex;gap:12px}.rf-sticky-right a{background:#8dc73f;color:#fff}.rf-sticky-contact span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.rf-sticky-contact a:hover{transform:translateY(-4px) scale(1.04)}
 .rf-card,.elementor-widget-container .elementor-column{border-radius:12px}.elementor-widget-container img{border-radius:10px}
 @media(max-width:700px){.rf-logo-img{height:58px;max-width:210px}.rf-sticky-contact{left:10px;right:10px;bottom:10px}.rf-sticky-wa,.rf-sticky-right a{width:50px;height:50px;font-size:21px}.rf-sticky-right{gap:8px}}

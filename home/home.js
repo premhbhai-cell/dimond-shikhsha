@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   counters.forEach(el=>io.observe(el));
 });
 
-// Rivika home enhancements
+// Diamond Shiksha Prachar Samiti home enhancements
 document.addEventListener('DOMContentLoaded',()=>{
   document.querySelectorAll('.elementor-counter-number[data-rf-counter]').forEach(el=>{
     const target=Number(el.dataset.rfCounter||el.dataset.toValue||0); const duration=1800; let start=0; const t0=performance.now();

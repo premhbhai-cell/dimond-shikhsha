@@ -156,3 +156,6 @@ body.home h2:has(+ *){}
 
 /* Mobile: keep the top information strip above desktop/tablet only; hide on phones. */
 @media (max-width:700px){ body.home .rf-topbar{display:none !important;} body.home .rf-header{top:0 !important;} }
+
+/* User-provided logo: home/images/mylogo.jpeg */
+.rf-logo-img,.rf-footer-logo-img{object-fit:contain!important;}

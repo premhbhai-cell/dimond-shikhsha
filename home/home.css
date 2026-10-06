@@ -1,0 +1,158 @@
+/* Home page styles are preserved in the original downloaded stylesheet set under assets/other-shared-assets/legacy. */
+
+/* Home-page card, icon and section interaction polish */
+.ha-infobox,.ha-hover-box,.elementor-counter{transition:transform .38s cubic-bezier(.2,.7,.2,1),box-shadow .38s ease,border-color .3s ease;will-change:transform}
+.ha-infobox:hover,.ha-hover-box:hover,.elementor-counter:hover{transform:translateY(-9px) scale(1.015);box-shadow:0 22px 46px rgba(0,0,0,.15);z-index:2}
+.ha-infobox-figure,.ha-infobox-figure img,.ha-hover-box-main,.ha-hover-box-wrapper{transition:transform .5s cubic-bezier(.2,.7,.2,1),filter .4s ease}
+.ha-infobox:hover .ha-infobox-figure{transform:translateY(-4px)}
+.ha-infobox:hover .ha-infobox-figure img{transform:scale(1.055);filter:saturate(1.08)}
+.ha-infobox-title,.ha-hover-title,.elementor-counter-number{transition:transform .3s ease,color .3s ease}.ha-infobox:hover .ha-infobox-title,.ha-hover-box:hover .ha-hover-title,.elementor-counter:hover .elementor-counter-number{transform:translateX(3px)}
+.ha-hover-box:hover .ha-hover-box-main{transform:scale(1.025)}
+.swiper-slide,.ha-slider-slide{transition:transform .4s ease,filter .4s ease}.swiper-slide:hover,.ha-slider-slide:hover{transform:translateY(-4px);filter:saturate(1.04)}
+@media(prefers-reduced-motion:reduce){.ha-infobox,.ha-hover-box,.elementor-counter,.swiper-slide,.ha-slider-slide{transition:none!important;transform:none!important}}
+
+
+/* Reliable home hero slider */
+.rf-legacy-hero-hidden{display:none!important}
+.rf-home-hero{position:relative;width:100%;overflow:hidden;background:#111;isolation:isolate}.rf-home-hero-track{position:relative;width:100%;height:min(46vw,690px);min-height:320px}.rf-home-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transform:scale(1.015);transition:opacity .45s ease,transform .75s ease,visibility .45s ease;display:block}.rf-home-slide.is-active{opacity:1;visibility:visible;transform:scale(1)}.rf-home-slide img{width:100%;height:100%;object-fit:cover;display:block}.rf-home-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.18),transparent 45%,rgba(0,0,0,.12));pointer-events:none}.rf-home-hero-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:48px;height:48px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:#222;box-shadow:0 10px 24px rgba(0,0,0,.2);font-size:24px;cursor:pointer;transition:transform .25s ease,background .25s ease,color .25s ease}.rf-home-hero-btn:hover{background:var(--green);color:#fff;transform:translateY(-50%) scale(1.08)}.rf-home-hero-btn.prev{left:24px}.rf-home-hero-btn.next{right:24px}.rf-home-hero-dots{position:absolute;z-index:5;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:8px}.rf-home-hero-dot{width:9px;height:9px;border:0;padding:0;border-radius:50%;background:rgba(255,255,255,.68);cursor:pointer;transition:all .25s ease}.rf-home-hero-dot.active{width:28px;border-radius:10px;background:#fff}.rf-home-slide:focus-visible{outline:3px solid #fff;outline-offset:-3px}@media(max-width:700px){.rf-home-hero-track{height:62vw;min-height:230px;max-height:430px}.rf-home-hero-btn{width:38px;height:38px;font-size:19px}.rf-home-hero-btn.prev{left:10px}.rf-home-hero-btn.next{right:10px}.rf-home-hero-dots{bottom:10px}}
+
+/* Homepage hero sizing: compact desktop banner, balanced mobile crop */
+.rf-home-hero{width:100%;max-width:100%;margin:0 auto;overflow:hidden}
+.rf-home-hero-track{height:clamp(300px,37vw,540px);min-height:300px;max-height:540px}
+.rf-home-slide img{object-fit:cover;object-position:center center}
+.rf-home-hero-btn{width:42px;height:42px;font-size:20px}
+.rf-home-hero-dots{bottom:14px}
+@media(max-width:700px){.rf-home-hero-track{height:clamp(205px,58vw,340px);min-height:205px;max-height:340px}.rf-home-hero-btn{width:32px;height:32px;font-size:16px}.rf-home-hero-btn.prev{left:8px}.rf-home-hero-btn.next{right:8px}.rf-home-hero-dots{bottom:8px}}
+
+/* HOME: keep the header exactly consistent with the inner pages */
+.rf-topbar,
+.rf-header{width:100%;}
+
+/* Remove legacy Elementor floating/chat widgets from the Home page.
+   The new .rf-wa-float WhatsApp button remains untouched. */
+body.home .elementor-fixed:not(.rf-wa-float),
+body.home .elementor-widget-chaty,
+body.home .chaty-widget,
+body.home .chaty-widget-is,
+body.home .ht-ctc,
+body.home .ht-ctc-chat,
+body.home .joinchat,
+body.home .tawk-min-container,
+body.home iframe[title*="chat" i],
+body.home iframe[title*="Chat"],
+body.home [class*="chaty" i],
+body.home [id*="chaty" i]{display:none!important;visibility:hidden!important;pointer-events:none!important;}
+
+/* Prevent the old fixed WhatsApp image/widget from appearing on any viewport. */
+body.home .elementor-element-8e130ab{display:none!important;visibility:hidden!important;}
+
+/* Same header dimensions as About Us / other inner pages. */
+@media(min-width:1001px){
+  body.home .rf-topbar{min-height:42px;}
+  body.home .rf-top-inner{min-height:42px;}
+  body.home .rf-mainbar{min-height:82px;}
+  body.home .rf-nav a{padding:29px 10px 28px;font-size:11px;}
+}
+
+@media(max-width:1000px){
+  body.home .rf-mainbar{min-height:78px;}
+  body.home .rf-nav{top:78px;}
+  body.home .rf-nav a{padding:14px 13px;font-size:12px;}
+}
+
+@media(max-width:700px){
+  body.home .rf-topbar{min-height:0;padding:7px 0;}
+  body.home .rf-top-inner{min-height:0;display:flex;flex-direction:column;align-items:stretch;gap:6px;font-size:11px;}
+  body.home .rf-top-left{max-width:none!important;width:100%;display:flex;flex-wrap:wrap;gap:4px 12px;overflow:visible;align-items:center;}
+  body.home .rf-top-left a,
+  body.home .rf-top-left a:last-child{display:flex!important;font-size:11px;white-space:normal;overflow-wrap:anywhere;}
+  body.home .rf-top-right{display:flex!important;width:100%;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:center;}
+  body.home .rf-mainbar{min-height:72px;gap:10px;}
+  body.home .rf-brand-text{font-size:16px;}
+  body.home .rf-brand-text small{font-size:8px;letter-spacing:1.7px;}
+  body.home .rf-mark{width:43px;height:43px;font-size:15px;border-width:2px;}
+  body.home .rf-nav{top:72px;}
+  body.home .rf-wa-float{display:none!important;}
+}
+
+/* Home hero: remove previous/next arrow controls; dots remain. */
+.rf-home-hero-btn{display:none !important;}
+
+/* === FINAL HOME POLISH: impact counters, stories and support cards === */
+.rf-home-impact-media{background:#fff;padding:70px 0 85px;position:relative;overflow:hidden}
+.rf-section-inner{width:min(1180px,92%);margin:0 auto}
+.rf-section-heading{text-align:center;margin:0 0 32px}
+.rf-section-heading h2{margin:0;text-transform:uppercase;font-size:34px;line-height:1.1;letter-spacing:1.5px;font-weight:800;color:#222}
+.rf-story-row,.rf-cause-row{display:grid;gap:24px}
+.rf-story-row{grid-template-columns:repeat(3,1fr)}
+.rf-story-card{position:relative;overflow:hidden;border-radius:4px;background:#111;box-shadow:0 12px 28px rgba(0,0,0,.12);min-height:290px}
+.rf-story-card img{width:100%;height:290px;display:block;object-fit:cover;transition:transform .5s ease,filter .5s ease}
+.rf-story-card:hover img{transform:scale(1.06);filter:brightness(.82)}
+.rf-story-caption{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;color:#fff;font-size:20px;font-weight:700;letter-spacing:.4px;background:linear-gradient(transparent,rgba(0,0,0,.82))}
+.rf-support-heading{margin-top:78px}
+.rf-cause-row{grid-template-columns:repeat(4,1fr)}
+.rf-cause-card{display:flex;flex-direction:column;justify-content:flex-end;min-height:285px;padding:25px 22px;text-decoration:none;color:#fff;background:linear-gradient(145deg,#242424,#111);border-radius:4px;box-shadow:0 12px 28px rgba(0,0,0,.14);position:relative;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.rf-cause-card:before{content:"";position:absolute;inset:auto 0 0;height:5px;background:#8dc73f;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.rf-cause-card:hover{transform:translateY(-8px);box-shadow:0 20px 38px rgba(0,0,0,.2)}
+.rf-cause-card:hover:before{transform:scaleX(1)}
+.rf-cause-title{font-size:27px;line-height:1.02;font-weight:900;letter-spacing:.5px;margin-bottom:16px}
+.rf-cause-card p{margin:0;color:#e8e8e8;font-size:14px;line-height:1.65}
+
+/* Counter section: clean four-column desktop row and animated number styling */
+.elementor-element-35918f2 .elementor-counter-title{display:none!important}
+.elementor-element-35918f2 .elementor-counter-number-wrapper{display:flex;justify-content:center;align-items:baseline;gap:2px}
+.elementor-element-35918f2 .elementor-counter-number{font-weight:900;letter-spacing:-1px}
+.elementor-element-35918f2 .elementor-counter-number-suffix{font-weight:900}
+.elementor-element-35918f2 .elementor-widget-text-editor{font-size:16px;line-height:1.45;text-align:center}
+
+/* Desktop top bar: small WhatsApp icon left, contact details on right */
+.rf-top-left{align-items:center!important}
+.rf-top-whatsapp{width:30px;height:30px;border-radius:50%;display:inline-flex!important;align-items:center;justify-content:center;color:#25d366!important;background:#fff;box-shadow:0 2px 9px rgba(0,0,0,.12);text-decoration:none!important}
+.rf-top-wa-icon,.rf-top-wa-icon svg{width:19px;height:19px;display:block}
+.rf-top-contact{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px}
+.rf-top-contact a{color:#555;text-decoration:none;white-space:nowrap}
+.rf-top-contact a:hover{color:#8dc73f}
+.rf-top-tagline{white-space:nowrap}
+
+@media(max-width:1000px){
+  .rf-story-row{grid-template-columns:repeat(3,1fr);gap:16px}
+  .rf-cause-row{grid-template-columns:repeat(2,1fr);gap:18px}
+  .rf-top-contact{gap:9px;font-size:11px}
+}
+@media(max-width:700px){
+  .rf-home-impact-media{padding:48px 0 60px}
+  .rf-section-heading h2{font-size:27px}
+  .rf-story-row{grid-template-columns:1fr;gap:18px}
+  .rf-story-card,.rf-story-card img{height:235px;min-height:235px}
+  .rf-cause-row{grid-template-columns:1fr;gap:16px}
+  .rf-cause-card{min-height:230px}
+  .rf-top-contact{width:100%;justify-content:flex-start;gap:5px 10px}
+  .rf-top-tagline{font-size:10px}
+  .rf-top-whatsapp{width:27px;height:27px}
+}
+
+/* New home sections */
+.rf-image-cards .rf-cause-card{padding:0;min-height:330px;background:#111}.rf-image-cards .rf-cause-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}.rf-cause-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;background:linear-gradient(transparent 25%,rgba(0,0,0,.88));color:#fff}.rf-image-cards .rf-cause-card:hover img{transform:scale(1.06)}.rf-campaign-section,.rf-gallery-slider{padding:70px 0;background:#fff}.rf-campaign-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.rf-campaign-grid article{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.12);padding-bottom:22px}.rf-campaign-grid img{width:100%;height:210px;object-fit:cover;display:block}.rf-campaign-grid h3,.rf-campaign-grid p{padding:0 20px}.rf-campaign-grid h3{margin:18px 0 8px;font-size:22px}.rf-campaign-grid p{margin:0;line-height:1.6;color:#666}.rf-gallery-slider{background:#f6f6f6}.rf-gallery-track{display:flex;gap:20px;overflow:hidden}.rf-gallery-track img{flex:0 0 calc(33.333% - 14px);height:280px;object-fit:cover;border-radius:14px;box-shadow:0 12px 28px rgba(0,0,0,.14);animation:rfGallery 18s linear infinite}.rf-section-heading p{text-align:center;color:#666;max-width:800px;margin:8px auto 30px;line-height:1.7}@keyframes rfGallery{0%{transform:translateX(0)}100%{transform:translateX(calc(-100% - 20px))}}
+@media(max-width:900px){.rf-campaign-grid{grid-template-columns:repeat(2,1fr)}.rf-gallery-track img{flex-basis:calc(50% - 10px)}}@media(max-width:600px){.rf-campaign-section,.rf-gallery-slider{padding:50px 0}.rf-campaign-grid{grid-template-columns:1fr;gap:18px}.rf-campaign-grid img{height:220px}.rf-gallery-track{overflow-x:auto;scroll-snap-type:x mandatory}.rf-gallery-track img{flex:0 0 86%;scroll-snap-align:start;animation:none;height:230px}.rf-image-cards .rf-cause-card{min-height:280px}}
+/* Remove legacy Empanelment & Accreditations block */
+body.home h2:has(+ *){}
+
+
+/* Stories in Motion: reliable auto-slider */
+.rf-story-row{display:flex!important;overflow:hidden;gap:24px;position:relative}
+.rf-story-card{flex:0 0 calc((100% - 48px)/3);min-width:0}
+.rf-story-track-clone{display:contents}
+@media(max-width:900px){.rf-story-card{flex-basis:calc((100% - 16px)/2)}}
+@media(max-width:600px){.rf-story-row{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.rf-story-row::-webkit-scrollbar{display:none}.rf-story-card{flex:0 0 88%;scroll-snap-align:start}}
+
+
+/* FINAL IMPACT GALLERY SLIDER */
+.rf-gallery-slider{overflow:hidden}
+.rf-gallery-slider .rf-gallery-track{display:flex!important;flex-wrap:nowrap!important;gap:20px!important;overflow:visible!important;transform:translateX(0);transition:transform .45s ease;will-change:transform}
+.rf-gallery-slider .rf-gallery-track img{flex:0 0 calc((100% - 40px)/3)!important;width:calc((100% - 40px)/3)!important;height:280px!important;animation:none!important;object-fit:cover;border-radius:14px;box-shadow:0 12px 28px rgba(0,0,0,.14)}
+@media(max-width:900px){.rf-gallery-slider .rf-gallery-track img{flex-basis:calc((100% - 20px)/2)!important;width:calc((100% - 20px)/2)!important}}
+@media(max-width:600px){.rf-gallery-slider .rf-gallery-track{gap:14px!important}.rf-gallery-slider .rf-gallery-track img{flex-basis:86%!important;width:86%!important;height:230px!important}}
+
+
+/* Mobile: keep the top information strip above desktop/tablet only; hide on phones. */
+@media (max-width:700px){ body.home .rf-topbar{display:none !important;} body.home .rf-header{top:0 !important;} }

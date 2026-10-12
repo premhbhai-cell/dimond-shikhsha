@@ -1,0 +1,16 @@
+/* Shared responsive image sliders */
+.ds-auto-slider{width: min(100% - 48px, 1280px);margin:clamp(30px,4vw,56px) auto;padding:0;position:relative;overflow:hidden;border-radius:16px;background:#f2f5f2;box-shadow:0 10px 28px rgba(0,0,0,.10);isolation:isolate}
+.ds-auto-slider__track{display:flex;transition:transform .65s ease;will-change:transform}
+.ds-auto-slider__slide{flex:0 0 100%;min-width:100%;height:clamp(250px,32vw,430px);display:flex;align-items:center;justify-content:center}
+.ds-auto-slider__slide img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+.ds-auto-slider__btn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:42px;height:42px;border:1px solid rgba(255,255,255,.5);border-radius:50%;background:rgba(12,35,27,.76);color:#fff;font-size:27px;line-height:1;cursor:pointer}
+.ds-auto-slider__btn--prev{left:14px}.ds-auto-slider__btn--next{right:14px}
+.ds-auto-slider__dots{position:absolute;left:0;right:0;bottom:14px;display:flex;justify-content:center;gap:7px}
+.ds-auto-slider__dot{width:8px;height:8px;border:0;border-radius:99px;background:rgba(255,255,255,.72);padding:0;cursor:pointer}
+.ds-auto-slider__dot[aria-current="true"]{width:24px;background:#01b673}
+@media(max-width:768px){.ds-auto-slider{width:calc(100% - 24px);margin:26px auto;border-radius:12px}.ds-auto-slider__slide{height:clamp(190px,58vw,320px)}.ds-auto-slider__btn{width:34px;height:34px;font-size:23px}.ds-auto-slider__btn--prev{left:8px}.ds-auto-slider__btn--next{right:8px}.ds-auto-slider__dots{bottom:9px}}
+@media(prefers-reduced-motion:reduce){.ds-auto-slider__track{transition:none}}
+/* Hide previous/next arrow buttons on all auto sliders; autoplay and dots remain */
+.ds-auto-slider__btn,
+.ds-auto-slider__btn--prev,
+.ds-auto-slider__btn--next{display:none!important;background:transparent!important;border:0!important;box-shadow:none!important}

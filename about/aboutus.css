@@ -1,0 +1,4 @@
+/* Page-specific styling kept in shared.css for consistency. */
+/* Responsive card polish */
+.rf-gallery-card,.rf-work-card,.rf-media-card,.rf-contact-card,.rf-card{border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,.10);overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}.rf-gallery-card:hover,.rf-work-card:hover,.rf-media-card:hover,.rf-contact-card:hover,.rf-card:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(0,0,0,.16)}
+@media(max-width:700px){.rf-gallery-grid,.rf-work-grid,.rf-media-grid{grid-template-columns:1fr!important;gap:18px!important}.rf-section-inner,.rf-wrap{width:min(92%,1200px)}}

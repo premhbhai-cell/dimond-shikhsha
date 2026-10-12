@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Center | Diamond Shiksha Prachar Samiti</title>
+  <meta name="description" content="Explore Diamond Shiksha Prachar Samiti's journey since 1998, with education, empowerment and community initiatives.">
+
+  <link rel="stylesheet" href="../assets/css/shared.css">
+  <link rel="stylesheet" href="../assets/css/header-final.css">
+  <link rel="stylesheet" href="media.css">
+  <link rel="icon" href="../home/images/mylogo.jpeg">
+
+  <style>
+    .archive-intro {
+      max-width: 850px;
+      margin: 0 auto 32px;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .archive-intro .rf-kicker {
+      color: #01b673;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .archive-intro h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin: 12px 0;
+      color: #172b35;
+    }
+
+    .archive-intro p {
+      color: #63717a;
+      line-height: 1.8;
+    }
+
+    .year-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+      margin: 28px auto 34px;
+    }
+
+    .year-list .rf-year {
+      border: 1px solid #dce8e3;
+      background: white;
+      color: #263a34;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .year-list .rf-year:hover,
+    .year-list .rf-year.active {
+      background: #01b673;
+      color: white;
+      border-color: #01b673;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .archive-card {
+      min-width: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid #e9efec;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .09);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .archive-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, .14);
+    }
+
+    .archive-card[hidden] {
+      display: none !important;
+    }
+
+    .archive-card .image-link {
+      display: block;
+      overflow: hidden;
+    }
+
+    .archive-card img {
+      width: 100%;
+      height: 225px;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s;
+    }
+
+    .archive-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .archive-body {
+      padding: 21px;
+    }
+
+    .archive-date {
+      display: inline-block;
+      background: #e8fbf3;
+      color: #078653;
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-weight: 800;
+    }
+
+    .archive-body h3 {
+      font-size: 21px;
+      line-height: 1.4;
+      margin: 14px 0 9px;
+      color: #172b35;
+    }
+
+    .archive-body p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #65727b;
+      margin: 0 0 16px;
+    }
+
+    .archive-link {
+      color: #008c5b;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .archive-link:hover {
+      text-decoration: underline;
+    }
+
+    #archive-note {
+      text-align: center;
+      color: #65727b;
+      margin: 28px 0 0;
+      line-height: 1.7;
+    }
+
+    .archive-cta {
+      background: #073b30;
+      color: white;
+      padding: 38px 20px;
+      margin-top: 20px;
+    }
+
+    .archive-cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .archive-cta h2 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 3vw, 34px);
+    }
+
+    .archive-cta p {
+      margin: 0;
+      line-height: 1.7;
+      color: #e0eee8;
+    }
+
+    @media (max-width: 900px) {
+      .archive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .archive-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .archive-card img {
+        height: 230px;
+      }
+
+      .year-list {
+        gap: 7px;
+      }
+
+      .year-list .rf-year {
+        padding: 8px 11px;
+        font-size: 13px;
+      }
+
+      .archive-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../assets/css/auto-sliders.css">
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="rf-topbar">
+    <div class="rf-wrap rf-top-inner">
+      <div class="rf-top-left">
+        <a class="rf-top-whatsapp"
+           href="https://wa.me/919027998078"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="WhatsApp">
+          <span class="rf-top-wa-icon">✆</span>
+        </a>
+      </div>
+
+      <div class="rf-top-right">
+        <div class="rf-top-contact">
+          <a href="tel:9027998078">9027998078</a>
+          <a href="mailto:satyamsre1984@gmail.com">
+            satyamsre1984@gmail.com
+          </a>
+        </div>
+
+        <span class="rf-top-tagline">
+          Creating Change. Building Futures.
+        </span>
+
+        <a class="rf-cause" href="../contact-us/contact.html">
+          SUPPORT A CAUSE
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="rf-header">
+    <div class="rf-wrap rf-mainbar">
+
+      <a class="rf-brand" href="../index.html">
+        <img class="rf-logo-img"
+             src="../home/images/mylogo.jpeg"
+             alt="Diamond Shiksha Prachar Samiti">
+      </a>
+
+      <button aria-expanded="false"
+              aria-label="Open menu"
+              class="rf-toggle"
+              type="button">
+        ☰
+      </button>
+
+      <nav class="rf-nav">
+        <a href="../index.html">Home</a>
+        <a href="../about/aboutus.html">About Us</a>
+        <a href="../our-work/ourwork.html">Our Work</a>
+        <a class="active" href="../media-center/media.html">
+          Media Center
+        </a>
+        <a href="../contact-us/contact.html">Contact Us</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="rf-page-hero" style="--hero:url('images/4.jpg')">
+    <div class="rf-wrap">
+      <div class="rf-eyebrow">
+        Diamond Shiksha Prachar Samiti
+      </div>
+
+      <h1>Our Journey Since 1998</h1>
+
+      <p>
+        Discover our journey in education, empowerment,
+        awareness and community development.
+      </p>
+    </div>
+  </section>
+
+  <!-- MEDIA ARCHIVE -->
+  <section class="rf-section">
+    <div class="rf-wrap">
+
+      <div class="archive-intro rf-reveal">
+        <div class="rf-kicker">Media Center · 1998–2025</div>
+
+        <h2>Workshops, Events & Our Journey</h2>
+
+        <p>
+          Explore our year-wise archive starting from 1998.
+          Select a year to view its activities, community initiatives
+          and related images.
+        </p>
+      </div>
+
+      <div class="year-list"
+           id="year-buttons"
+           aria-label="Choose archive year">
+      </div>
+
+      <div class="archive-grid"
+           id="events"
+           aria-live="polite">
+      </div>
+
+      <p id="archive-note">
+        Showing the archive for 1998.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="archive-cta">
+    <div class="rf-wrap archive-cta-inner">
+      <div>
+        <h2>Bring Your Team. Create an Impact.</h2>
+        <p>
+          Collaborate with Diamond Shiksha Prachar Samiti for
+          workshops, volunteering and community engagement.
+        </p>
+      </div>
+
+      <a class="rf-btn" href="../contact-us/contact.html">
+        Talk to Us
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="rf-footer">
+    <div class="rf-footer-top">
+      <div class="rf-wrap rf-footer-grid">
+
+        <div>
+          <div class="rf-footer-brand">
+            <img class="rf-footer-logo-img"
+                 src="../home/images/mylogo.jpeg"
+                 alt="Diamond Shiksha Prachar Samiti">
+          </div>
+
+          <p>
+            Working towards meaningful and sustainable social change
+            through education, empowerment and community engagement.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <a href="../index.html">Home</a>
+          <a href="../about/aboutus.html">About Us</a>
+          <a href="../our-work/ourwork.html">Our Work</a>
+          <a href="../media-center/media.html">Media Center</a>
+          <a href="../contact-us/contact.html">Contact Us</a>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <a href="mailto:satyamsre1984@gmail.com">
+            satyamsre1984@gmail.com
+          </a>
+          <a href="tel:9027998078">9027998078</a>
+          <p>Saharanpur, Uttar Pradesh</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="rf-bottom">
+      © 2026 Diamond Shiksha Prachar Samiti. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- STICKY CONTACT -->
+  <div class="rf-sticky-contact" aria-label="Quick contact">
+
+    <a class="rf-sticky-wa"
+       href="https://wa.me/919027998078"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="WhatsApp">
+      <span>✆</span>
+      <span>WhatsApp</span>
+    </a>
+
+    <div class="rf-sticky-right">
+      <a href="tel:9027998078" aria-label="Call">
+        <span>☎</span>
+        <span>Call</span>
+      </a>
+
+      <a href="mailto:satyamsre1984@gmail.com" aria-label="Email">
+        <span>✉</span>
+        <span>Mail</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- EXISTING SITE SCRIPT -->
+  <script src="../assets/js/shared.js"></script>
+
+  <!-- YEAR FILTER AND IMAGE CARDS -->
+  <script>
+    (function () {
+      const firstYear = 1998;
+      const lastYear = 2025;
+
+      // Years are displayed in chronological order: 1998, 1999 ... 2025.
+      const years = Array.from(
+        { length: lastYear - firstYear + 1 },
+        (_, index) => firstYear + index
+      );
+
+      const imageSet = [
+        {
+          src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80",
+          alt: "Children learning in a classroom",
+          query: "education classroom children"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80",
+          alt: "Community education activity",
+          query: "community education volunteering"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80",
+          alt: "Volunteers working together",
+          query: "volunteers community outreach"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80",
+          alt: "Students learning",
+          query: "students learning education"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=900&q=80",
+          alt: "Community teamwork",
+          query: "nonprofit community teamwork"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=80",
+          alt: "Community support activity",
+          query: "community support charity"
+        }
+      ];
+
+      const buttons = document.getElementById("year-buttons");
+      const grid = document.getElementById("events");
+      const note = document.getElementById("archive-note");
+
+      function showYear(year) {
+        buttons.querySelectorAll("button").forEach(button => {
+          const active = Number(button.dataset.year) === year;
+
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+
+        grid.querySelectorAll(".archive-card").forEach(card => {
+          card.hidden = Number(card.dataset.year) !== year;
+        });
+
+        note.textContent =
+          "Showing the archive for " + year +
+          ". Images are illustrative; add verified event photographs and details.";
+      }
+
+      years.forEach(year => {
+        // YEAR BUTTON
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "rf-year";
+        button.dataset.year = year;
+        button.textContent = year;
+
+        button.addEventListener("click", function () {
+          showYear(year);
+        });
+
+        buttons.appendChild(button);
+
+        // IMAGE FOR EACH YEAR
+        const photo = imageSet[(year - firstYear) % imageSet.length];
+
+        const googleUrl =
+          "https://www.google.com/search?tbm=isch&q=" +
+          encodeURIComponent(photo.query + " " + year);
+
+        // EVENT CARD
+        const card = document.createElement("article");
+
+        card.className = "archive-card rf-reveal";
+        card.dataset.year = year;
+        card.hidden = year !== firstYear;
+
+        // CLICKABLE IMAGE
+        const imageAnchor = document.createElement("a");
+
+        imageAnchor.className = "image-link";
+        imageAnchor.href = googleUrl;
+        imageAnchor.target = "_blank";
+        imageAnchor.rel = "noopener noreferrer";
+        imageAnchor.setAttribute(
+          "aria-label",
+          "Search Google Images for " + year
+        );
+
+        const image = document.createElement("img");
+
+        image.src = photo.src;
+        image.alt = photo.alt + " — illustrative image for " + year;
+        image.loading = "lazy";
+
+        imageAnchor.appendChild(image);
+
+        // CARD CONTENT
+        const body = document.createElement("div");
+        body.className = "archive-body";
+
+        const date = document.createElement("span");
+        date.className = "archive-date";
+        date.textContent = year;
+
+        const heading = document.createElement("h3");
+
+        heading.textContent = year === 1998
+          ? "Our Journey Begins"
+          : "Education & Community Initiatives";
+
+        const description = document.createElement("p");
+
+        description.textContent = year === 1998
+          ? "Our journey begins in 1998. Add verified founding details, milestones and original photographs here."
+          : "Explore education, awareness and community-development work from " +
+            year + ". Add verified events and original photographs for this year.";
+
+        const link = document.createElement("a");
+
+        link.className = "archive-link";
+        link.href = googleUrl;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "Find Related Images on Google »";
+
+        body.append(date, heading, description, link);
+        card.append(imageAnchor, body);
+        grid.appendChild(card);
+      });
+
+      // DEFAULT: SHOW 1998 WHEN PAGE LOADS OR REFRESHES.
+      showYear(1998);
+    })();
+  </script>
+
+  <script src="../assets/js/auto-sliders.js" defer></script>
+</body>
+</html>
